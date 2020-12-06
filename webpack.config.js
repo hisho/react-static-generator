@@ -39,7 +39,11 @@ module.exports = () => {
       ]
     },
     plugins: [
-      ...Pages.map((page) => new HtmlWebpackPlugin(page)),
+      ...Pages.map(({template, filename}) => new HtmlWebpackPlugin({
+        template,
+        filename,
+        inject: false,
+      })),
       ...[
         new ForkTsCheckerWebpackPlugin(),
         new webpack.ProgressPlugin(),

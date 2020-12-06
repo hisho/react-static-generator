@@ -8,7 +8,6 @@ const pages = glob.sync(`**/*.tsx`, {
   return {
     template: "src/pages/" + n,
     filename: 'dist/' + ext,
-    inject: false,
   }
 });
 
