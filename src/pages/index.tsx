@@ -1,9 +1,9 @@
 import React from 'react';
-import {renderToStaticMarkup} from 'react-dom/server';
+import {myRenderToStaticMarkup} from "../hooks";
 import {Layout} from "../layouts";
 
 export default () => {
-  return '<!DOCTYPE html>' + renderToStaticMarkup(
+  return myRenderToStaticMarkup(
     <Layout>
       テスト
     </Layout>
