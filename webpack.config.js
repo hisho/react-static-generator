@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Pages = require(path.resolve('.config/webpack/pages.js'));
 
 module.exports = () => {
   const MODE = process.env.NODE_ENV;
@@ -38,13 +39,11 @@ module.exports = () => {
       ]
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: "src/pages/index.tsx",
-        filename: 'dist/index.html',
-        inject: false,
-      }),
-      new ForkTsCheckerWebpackPlugin(),
-      new webpack.ProgressPlugin(),
+      ...Pages.map((page) => new HtmlWebpackPlugin(page)),
+      ...[
+        new ForkTsCheckerWebpackPlugin(),
+        new webpack.ProgressPlugin(),
+      ]
     ],
   }
 };
