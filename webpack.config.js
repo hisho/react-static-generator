@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = () => {
   const MODE = process.env.NODE_ENV;
@@ -37,6 +38,10 @@ module.exports = () => {
       ]
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        title: "My App",
+        template: "src/pages/index.tsx",
+      }),
       new ForkTsCheckerWebpackPlugin(),
       new webpack.ProgressPlugin(),
     ],
