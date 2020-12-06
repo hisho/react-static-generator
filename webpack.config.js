@@ -40,6 +40,8 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "src/pages/index.tsx",
+        filename: 'dist/index.html',
+        inject: false,
       }),
       new ForkTsCheckerWebpackPlugin(),
       new webpack.ProgressPlugin(),
