@@ -4,6 +4,18 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development run-p _start",
+    "build": "NODE_ENV=production run-p _build",
+    "webpack-watch": "webpack -w",
+    "webpack-build": "webpack",
+    "_start": "run-s webpack-watch",
+    "_build": "run-s webpack-build"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "@types/webpack": "^4.41.25",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
   }
 }
