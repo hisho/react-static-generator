@@ -4,8 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development run-p _start",
+    "start": "NODE_ENV=development run-p _start server",
     "build": "NODE_ENV=production run-p _build",
+    "server": "browser-sync start --config ./.config/bs-config.js",
     "webpack-watch": "webpack -w",
     "webpack-build": "webpack",
     "_start": "run-s webpack-watch",
@@ -16,6 +17,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/webpack": "^4.41.25",
+    "browser-sync": "^2.26.13",
     "fork-ts-checker-webpack-plugin": "^6.0.5",
     "glob": "^7.1.6",
     "html-webpack-plugin": "^4.5.0",
