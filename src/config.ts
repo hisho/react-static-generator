@@ -1,11 +1,13 @@
 import React from "react";
 
-type currentPageValueType = {
-  path: '/' | './' | '../' | '../../',
+export type pathType = '/' | './' | '../' | '../../';
+
+type initialPageValueType = {
+  path: pathType,
 }
 
-const currentPageValue: currentPageValueType = {
+const initialPageValue: initialPageValueType = {
   path: '/',
 }
 
-export const CurrentPage = React.createContext(currentPageValue);
+export const CurrentPage = React.createContext(initialPageValue);
