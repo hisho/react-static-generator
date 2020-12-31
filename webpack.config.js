@@ -39,9 +39,10 @@ module.exports = () => {
       ]
     },
     plugins: [
-      ...Pages.map(({template, filename}) => new HtmlWebpackPlugin({
+      ...Pages.map(({template, filename, relativePath}) => new HtmlWebpackPlugin({
         template,
         filename,
+        relativePath,
         inject: false,
       })),
       ...[
