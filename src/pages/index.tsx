@@ -1,11 +1,14 @@
 import React from 'react';
 import {myRenderToStaticMarkup} from "../hooks";
 import {Layout} from "../layouts";
+import {CurrentPage} from "../config";
 
 export default () => {
   return myRenderToStaticMarkup(
-    <Layout>
-      テスト
-    </Layout>
+    <CurrentPage.Provider value={{path: './'}}>
+      <Layout>
+        テスト
+      </Layout>
+    </CurrentPage.Provider>
   )
 };
