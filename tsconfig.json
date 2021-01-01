@@ -13,6 +13,9 @@
     "lib": ["dom", "es2015", "dom.iterable"],
     "typeRoots": ["src/@types", "node_modules/@types"],
     "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    },
     "strict": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
