@@ -1,8 +1,8 @@
 import {renderToStaticMarkup} from 'react-dom/server';
 import React, {ReactElement} from "react";
 import {ProcessedOptions} from 'html-webpack-plugin';
-import {pathType} from "../config";
-import {CurrentPage} from "../config";
+import {pathType} from "src/config";
+import {CurrentPage} from "src/config";
 
 function myRenderToStaticMarkup(element: ReactElement): string {
   return '<!DOCTYPE html>' + renderToStaticMarkup(element);
