@@ -1,4 +1,5 @@
 import React, {FC, ReactNode} from 'react'
+import {Helmet} from "react-helmet";
 
 type LayoutType = {
   children: ReactNode
@@ -7,16 +8,16 @@ type LayoutType = {
 export const Layout: FC<LayoutType> = ({children}) => {
   return (
     <>
-      <html lang="ja">
-      <head>
+      <Helmet>
+        <html lang="ja" />
         <meta charSet="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>タイトル</title>
-      </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="説明文"/>
+      </Helmet>
       <body>
       {children}
       </body>
-      </html>
     </>
   )
 }
