@@ -15,20 +15,20 @@
   "devDependencies": {
     "@types/browser-sync": "^3001.0.28-alpha",
     "@types/glob": "^7.1.3",
-    "@types/node": "^14.14.10",
+    "@types/node": "^14.14.17",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
     "@types/webpack": "^4.41.25",
     "browser-sync": "^2.26.13",
-    "fork-ts-checker-webpack-plugin": "^6.0.5",
+    "fork-ts-checker-webpack-plugin": "^6.0.8",
     "glob": "^7.1.6",
     "html-webpack-plugin": "^4.5.0",
     "npm-run-all": "^4.1.5",
-    "ts-loader": "^8.0.11",
-    "typescript": "^4.1.2",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.2.0"
+    "ts-loader": "^8.0.13",
+    "typescript": "^4.1.3",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
   },
   "dependencies": {
     "react": "^17.0.1",
