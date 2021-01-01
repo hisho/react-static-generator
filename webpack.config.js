@@ -25,6 +25,7 @@ module.exports = () => {
       filename: '[name].js',
       path: path.join(__dirname),
     },
+    target: ['web', 'es5'],
     module: {
       rules: [
         {
