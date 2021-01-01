@@ -18,6 +18,7 @@
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
     "@types/webpack": "^4.41.25",
     "browser-sync": "^2.26.13",
     "fork-ts-checker-webpack-plugin": "^6.0.5",
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
   }
 }
