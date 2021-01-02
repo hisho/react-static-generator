@@ -11,7 +11,7 @@ const pages = glob.sync(`**/*.tsx`, {
   const relativePath = `${path.relative(pageCurrentPath, PAGE_ROOT) || '.'}/`;
   const currentPageHTMLPath = currentPagePath.replace(/tsx$/, 'html')
   return {
-    template: PAGE_ROOT,
+    template: PAGE_ROOT + currentPagePath,
     filename: 'dist/' + currentPageHTMLPath,
     relativePath
   }
