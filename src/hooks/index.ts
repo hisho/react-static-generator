@@ -1,1 +1,0 @@
-export {renderToStaticMarkup} from "@src/hooks/renderToStaticMarkup";

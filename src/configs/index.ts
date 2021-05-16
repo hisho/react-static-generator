@@ -1,0 +1,1 @@
+export {renderToStaticMarkup} from "@src/configs/renderToStaticMarkup";
