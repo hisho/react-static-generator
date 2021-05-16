@@ -13,7 +13,7 @@ module.exports = () => {
     mode: MODE,
     devtool: IS_DEVELOPMENT ? 'inline-source-map' : false,
     entry: {
-      "dist/assets/js/main": "./src/js/main",
+      "dist/assets/scripts/main": "./src/scripts/main",
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.jsx', '.js'],
