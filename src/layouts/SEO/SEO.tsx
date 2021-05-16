@@ -25,7 +25,7 @@ export const SEO: React.VFC<SEOPropsType> = (
       <meta property="og:description" content="{{ SEO::description() }}"/>
       <meta property="og:image" content="{{ SEO::image() }}"/>
       <script src="/assets/script/main.js" async={true}/>
-      <link rel="stylesheet" href="/assets/styles/common.css"/>
+      <link rel="stylesheet" href="/assets/styles/style.css"/>
       {children}
     </Helmet>
   )

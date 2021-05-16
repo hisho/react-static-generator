@@ -10,10 +10,10 @@ module.exports = () => {
     mode: MODE,
     devtool: IS_DEVELOPMENT ? 'inline-source-map' : false,
     entry: {
-      "dist/assets/scripts/main": "./src/scripts/main",
+      "dist/assets/styles/style": "./src/styles/style",
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.jsx', '.js'],
+      extensions: ['.ts', '.tsx', '.jsx', '.js', '.css'],
       alias: {
         '@src': path.resolve('./src'),
       },

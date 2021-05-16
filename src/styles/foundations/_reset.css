@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  word-wrap: inherit;
+  border: none;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-feature-settings: 'palt';
+  line-height: 1;
+  letter-spacing: 0;
+  word-break: break-all;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  text-align: left;
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+a object {
+  pointer-events: none;
+}
+
+img {
+  width: 100%;
+}
+
+svg {
+  overflow: hidden;
+}
+
+img, svg, video, canvas {
+  height: auto;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+address, em {
+  font-style: normal;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 16px;
+}
+
+input {
+  border-radius: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+select,
+textarea {
+  background-color: transparent;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* disabledの時はカーソルをデフォルトにする */
+[disabled] {
+  cursor: default;
+}
+
+/* hiddenの時は表示しない */
+[hidden] {
+  display: none !important;
+}
+
+/* オートコンプリートの背景色を擬似的に消す */
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* 視覚効果を無効にしてるユーザにはアニメーションさせない */
+@media (prefers-reduced-motion: reduce) {
+  *:not(#id),
+  :not(#id)::before,
+  :not(#id)::after {
+    transition-delay: 0s !important;
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* mouseとtouchの時にフォーカスを消す */
+[data-whatinput='mouse'] *:focus,
+[data-whatinput='touch'] *:focus {
+  outline: none;
+}
