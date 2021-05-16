@@ -1,14 +1,14 @@
 import React from 'react';
-import {ProcessedOptions} from 'html-webpack-plugin';
-import {newRenderToStaticMarkup} from "src/hooks";
-import {Layout} from "src/layouts";
-import {App} from "src/components";
+import {renderToStaticMarkup} from "src/hooks";
+import {Layout, SEO} from "src/layouts";
 
-export default ({htmlWebpackPlugin}: ProcessedOptions) => {
-  return newRenderToStaticMarkup(
+export default () => {
+  return renderToStaticMarkup(
     <Layout>
+      <SEO>
+        <title>いえええええええええええええい</title>
+      </SEO>
       about
-      <App/>
     </Layout>
-  )(htmlWebpackPlugin);
+  );
 };

@@ -1,11 +1,9 @@
-import {renderToStaticMarkup} from 'react-dom/server';
-import React, {ReactElement} from "react";
+import {renderToStaticMarkup as reactRenderToStaticMarkup} from 'react-dom/server';
+import React from "react";
 import {Helmet} from "react-helmet";
-import {ProcessedOptions} from 'html-webpack-plugin';
-import {CurrentPage, pathType} from "src/config";
 
-function myRenderToStaticMarkup(element: ReactElement): string {
-  const staticMarkup = renderToStaticMarkup(element);
+function myRenderToStaticMarkup(element: React.ReactElement): string {
+  const staticMarkup = reactRenderToStaticMarkup(element);
   const helmet = Helmet.renderStatic();
 
   function replaceDataHelmet(helmet: string) {
@@ -18,20 +16,16 @@ function myRenderToStaticMarkup(element: ReactElement): string {
       <head>
        ${replaceDataHelmet(helmet.title.toString())}
        ${replaceDataHelmet(helmet.meta.toString())}
+       ${replaceDataHelmet(helmet.script.toString())}
        ${replaceDataHelmet(helmet.link.toString())}
       </head>
-      ${staticMarkup}
+      <body>
+       ${staticMarkup}
+      </body>
     </html>
   `;
 }
 
-export function newRenderToStaticMarkup(element: ReactElement) {
-  return (htmlWebpackPlugin: ProcessedOptions) => {
-    const relativePath: pathType = htmlWebpackPlugin.options.relativePath;
-    return myRenderToStaticMarkup(
-      <CurrentPage.Provider value={{path: relativePath}}>
-        {element}
-      </CurrentPage.Provider>
-    )
-  }
+export const renderToStaticMarkup = (element: React.ReactElement) => {
+  return myRenderToStaticMarkup(element)
 }
