@@ -29,7 +29,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.(tsx?|jsx?)$/,
+          test: /\.(tsx?)$/,
           use: [
             {
               loader: 'ts-loader',
@@ -43,10 +43,9 @@ module.exports = () => {
       ]
     },
     plugins: [
-      ...Pages.map(({template, filename, relativePath}) => new HtmlWebpackPlugin({
+      ...Pages.map(({template, filename}) => new HtmlWebpackPlugin({
         template,
         filename,
-        relativePath,
         inject: false,
       })),
       ...[
