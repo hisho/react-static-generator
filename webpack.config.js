@@ -1,57 +1,18 @@
-const webpack = require('webpack');
+//安全にパスを解決する
 const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Pages = require(path.resolve('.config/webpack/pages.js'));
+//複数のwebpackをmergeするプラグイン
+const WebpackCommon = require('./webpack.common');
+//javascriptの設定
+const WebpackJavaScript = require(path.resolve(__dirname, '.config/webpack/typescript'));
+//reactをSSGする設定
+const WebpackReactSSG = require(path.resolve(__dirname, '.config/webpack/react-static'));
+//複数のwebpackをmergeするプラグイン
+const {merge} = require('webpack-merge');
 
 module.exports = () => {
-  const MODE = process.env.NODE_ENV;
-  const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
-  const IS_PRODUCTION = process.env.NODE_ENV === 'production';
-
-  return {
-    mode: MODE,
-    devtool: IS_DEVELOPMENT ? 'inline-source-map' : false,
-    entry: {
-      "dist/assets/scripts/main": "./src/scripts/main",
-    },
-    resolve: {
-      extensions: ['.ts', '.tsx', '.jsx', '.js'],
-      alias: {
-        '@src': path.resolve('./src'),
-      },
-    },
-    output: {
-      filename: '[name].js',
-      path: path.join(__dirname),
-    },
-    target: ['web', 'es5'],
-    module: {
-      rules: [
-        {
-          test: /\.(tsx?)$/,
-          use: [
-            {
-              loader: 'ts-loader',
-              options: {
-                transpileOnly: true,
-                experimentalWatchApi: true,
-              }
-            }
-          ],
-        }
-      ]
-    },
-    plugins: [
-      ...Pages.map(({template, filename}) => new HtmlWebpackPlugin({
-        template,
-        filename,
-        inject: false,
-      })),
-      ...[
-        new ForkTsCheckerWebpackPlugin(),
-        new webpack.ProgressPlugin(),
-      ]
-    ],
-  }
-};
+  return merge(
+    WebpackCommon(),
+    WebpackJavaScript(),
+    WebpackReactSSG()
+  );
+}
