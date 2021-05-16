@@ -14,7 +14,7 @@
     "typeRoots": ["src/@types", "node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"]
+      "@src/*": ["src/*"]
     },
     "strict": true,
     "moduleResolution": "node",

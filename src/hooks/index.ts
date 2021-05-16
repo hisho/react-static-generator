@@ -1,1 +1,1 @@
-export {renderToStaticMarkup} from './newRenderToStaticMarkup';
+export {renderToStaticMarkup} from "@src/hooks/renderToStaticMarkup";

@@ -1,6 +1,6 @@
 import React from 'react';
-import {renderToStaticMarkup} from "src/hooks";
-import {Layout,SEO} from "src/layouts";
+import {renderToStaticMarkup} from "@src/hooks";
+import {Layout,SEO} from "@src/layouts";
 
 export default () => {
   return renderToStaticMarkup(
